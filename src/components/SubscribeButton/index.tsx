@@ -7,7 +7,11 @@ import { useRouter } from "next/router";
 
 import styles from "./styles.module.scss";
 
-export function SubscribeButton() {
+interface SubscribeButtonProps {
+  priceId: string;
+}
+
+export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   3;
 
   const [session] = useSession();

@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-// import { SubscribeButton } from "../components/SubscribeButton";
+import { SubscribeButton } from "../components/SubscribeButton";
 
 import styles from "./home.module.scss";
 
@@ -37,7 +37,7 @@ export default function Home({ product }: IHomeProps) {
             Get access to all he publications <br />
             <span>for 11111 month</span>
           </p>
-          {/* <SubscribeButton /> */}
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />

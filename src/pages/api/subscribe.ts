@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { query as q } from "faunadb";
 
+import { Console } from "console";
 import { fauna } from "../../services/fauna";
 
 import { stripe } from "../../services/stripe";
@@ -25,12 +26,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       email: session.user.email,
       // metadata
     });
+    console.log(
+      "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    );
+    console.log(stripeCustomer);
 
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
       payment_method_types: ["card"],
       billing_address_collection: "required",
-      line_items: [{ price: "price_1Km21SKa9011J7KZy9HHJaje", quantity: 1 }],
+      line_items: [{ price: "price_1KmOemKa9011J7KZPJy78Q3I", quantity: 1 }],
       mode: "subscription",
       allow_promotion_codes: true,
       success_url: process.env.STRIPE_SUCESS_URL,

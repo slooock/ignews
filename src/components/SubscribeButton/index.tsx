@@ -1,4 +1,4 @@
-import { signIn, useSession } from "next-auth/client";
+// import { signIn, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
 // import api from '../../services/api';
@@ -14,7 +14,7 @@ interface SubscribeButtonProps {
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
   3;
 
-  const [session] = useSession();
+  // const [session] = useSession();
   const router = useRouter();
 
   async function handleSubscribe() {

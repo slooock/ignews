@@ -21,6 +21,8 @@ export default NextAuth({
   // secret: process.env.JWT_SECRET,
   callbacks: {
     async signIn({ user }) {
+      const { email } = user;
+
       try {
         await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
         return true;
